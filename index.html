@@ -1,0 +1,29 @@
+<!-- templates/index.html -->
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Video Processing App</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <h1>Video Processing App</h1>
+  <form action="/audio_extraction" method="post" enctype="multipart/form-data">
+    <label for="user">User:</label>
+    <input type="text" id="user" name="user" required>
+    <label for="video">Upload Video for Audio Extraction:</label>
+    <input type="file" id="video" name="video" accept="video/*" required>
+    <button type="submit">Extract Audio</button>
+  </form>
+  <form action="/video_watermarking" method="post" enctype="multipart/form-data">
+    <label for="user">User:</label>
+    <input type="text" id="user" name="user" required>
+    <label for="position">Watermark Position:</label>
+    <input type="text" id="position" name="position" required>
+    <label for="video">Upload Video for Watermarking:</label>
+    <input type="file" id="video" name="video" accept="video/*" required>
+    <button type="submit">Add Watermark</button>
+  </form>
+</body>
+</html>
